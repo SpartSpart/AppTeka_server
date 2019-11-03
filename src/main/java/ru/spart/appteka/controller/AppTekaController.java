@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ru.spart.appteka.controller.model.Drugs;
-import ru.spart.appteka.service.DrugsNotFound;
+import ru.spart.appteka.service.serviceException.DrugsNotFound;
 import ru.spart.appteka.service.DrugsService;
 
 import java.util.List;
@@ -24,7 +24,7 @@ public class AppTekaController {
 
     @PreAuthorize("isAuthenticated()")
     @PostMapping(value = "/drug")
-    public ResponseEntity<Long> addDrug(@RequestBody Drugs drug) {
+    public ResponseEntity<Long> addDrug(@RequestBody Drugs drug) throws DrugsNotFound {
         return ResponseEntity
                 .ok()
                 .body(drugsService.add(drug));
@@ -73,10 +73,11 @@ public class AppTekaController {
 
     @PreAuthorize("isAuthenticated()")
     @GetMapping(value = "/drugs")
-    public ResponseEntity<List<Drugs>> getAllDrugs() {
+    public ResponseEntity<List<Drugs>> getAllDrugs() throws DrugsNotFound {
         return ResponseEntity
                 .ok()
                 .body(drugsService.getAllDrugs());
+        //
     }
 
 }

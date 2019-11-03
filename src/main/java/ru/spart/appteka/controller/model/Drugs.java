@@ -5,9 +5,9 @@ import java.util.Date;
 public class Drugs {
     private long id;
     private String name;
-    private long type_id;
+    private String type;
     private String count;
-    private long appointment_id;
+    private String appointment;
     private Date date;
     private long user_id;
 
@@ -19,17 +19,17 @@ public class Drugs {
 
     public void setName(String name) {this.name = name;}
 
-    public long getType_id() {return type_id;}
+    public String getType() {return type;}
 
-    public void setType_id(long type_id) {this.type_id = type_id;}
+    public void setType(String type) {this.type = type;}
 
     public String getCount() {return count;}
 
     public void setCount(String count) {this.count = count;}
 
-    public long getAppointment_id() {return appointment_id;}
+    public String getAppointment() {return appointment;}
 
-    public void setAppointment_id(long appointment_id) {this.appointment_id = appointment_id;}
+    public void setAppointment(String appointment) {this.appointment = appointment;}
 
     public Date getDate() {return date;}
 

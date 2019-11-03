@@ -14,8 +14,7 @@ import javax.persistence.*;
         @Column(name = "APPOINTMENT")
         private String appointment;
 
-        public AppointmentData() {
-        }
+        public AppointmentData() {}
 
         public long getId() {return id;}
 

@@ -10,7 +10,7 @@ public class Type {
 
     public String getType() {return type;}
 
-    public void setType(String login) {this.type = type;}
+    public void setType(String type) {this.type = type;}
 
 
 }
